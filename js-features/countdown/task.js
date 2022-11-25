@@ -1,3 +1,4 @@
+// готовое дз
 let secondTime = document.getElementById('timerSec').textContent;
 let minuetTime = document.getElementById('timerMin').textContent;
 let hourTime = document.getElementById('timerHour').textContent;

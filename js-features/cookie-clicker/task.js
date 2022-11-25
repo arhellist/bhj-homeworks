@@ -1,3 +1,4 @@
+//готовое дз
 let clickCount = Number(document.getElementById('clicker__counter').textContent);
 let image = document.getElementById('cookie');
 let clean = document.getElementById('clear');
