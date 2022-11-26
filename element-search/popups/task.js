@@ -5,7 +5,7 @@ let modalClose = document.getElementsByClassName('modal__close'); // здесь 
 
 
 Array.from(modalClose).forEach(el => {
-    el.addEventListener('click', (item) => {
+    el.addEventListener('click', () => {
         closed(modalMain);
         closed(modalSuccess);
     })
