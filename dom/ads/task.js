@@ -10,10 +10,6 @@ const timeCount = setInterval(() => {
     }
 
     timeInterval = rotatorCase[count].getAttribute('data-speed');
-    setTimeout(() => {
-        console.log(timeInterval);
-    }), timeInterval;
-
     rotatorCase[count].classList.add('rotator__case_active');
     collor = rotatorCase[count].getAttribute('data-color');
     rotatorCase[count].style.color = collor;
@@ -22,4 +18,5 @@ const timeCount = setInterval(() => {
     } else {
         rotatorCase[count - 1].classList.remove('rotator__case_active');
     }
+
 }, 1000)
