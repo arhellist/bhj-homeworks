@@ -19,7 +19,9 @@ function xhrLoad() {
     });
 
     xhr.onload = function() {
+
         //console.log(xhr.responseText);
+
         const jsn = JSON.parse(xhr.responseText);
         obj = new Object;
         obj = jsn.response.Valute;
@@ -28,19 +30,24 @@ function xhrLoad() {
         for (let element in obj) {
             console.log(obj[element].CharCode, obj[element].Value);
 
-            let Item = document.createElement('div').classList.add('item');
-            let ItemCode = document.createElement('div').classList.add('item__code');
-            let ItemValue = document.createElement('div').classList.add('item__value');
-            let ItemCurency = document.createElement('div').classList.add('item__currency');
+            let Item = document.createElement('div');
+            let ItemCode = document.createElement('div');
+            let ItemValue = document.createElement('div');
+            let ItemCurency = document.createElement('div');
+
+            Item.classList.add('item');
+            ItemCode.classList.add('item__code');
+            ItemValue.classList.add('item__value');
+            ItemCurency.classList.add('item__currency');
 
             ItemCode.innerText = obj[element].CharCode;
             ItemValue.innerText = obj[element].Value;
             ItemCurency.innerText = 'руб.';
 
-            items.insertAdjacentElement('beforeend', 'Item');
-            Item.insertAdjacentElement('beforeend', 'ItemCode');
-            Item.insertAdjacentElement('beforeend', 'ItemValue');
-            Item.insertAdjacentElement('beforeend', 'ItemCurency');
+            items.insertAdjacentElement('beforeend', Item);
+            Item.insertAdjacentElement('beforeend', ItemCode);
+            Item.insertAdjacentElement('beforeend', ItemValue);
+            Item.insertAdjacentElement('beforeend', ItemCurency);
 
         }
     }
