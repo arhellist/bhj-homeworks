@@ -3,9 +3,6 @@ let url = 'https://students.netoservices.ru/nestjs-backend/slow-get-courses';
 const items = document.querySelector('#items');
 
 
-xhrLoad();
-
-
 function xhrLoad() {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
@@ -53,3 +50,4 @@ function xhrLoad() {
     }
 
 }
+xhrLoad();
