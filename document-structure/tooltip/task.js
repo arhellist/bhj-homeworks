@@ -1,16 +1,17 @@
-const tooltip = Array.from(document.querySelectorAll('.has-tooltip'));
+const tooltip = document.querySelectorAll('.has-tooltip');
 const body = document.querySelector('body');
 
+
+// Клик на подсказку
 tooltip.forEach((elem) => {
     elem.addEventListener('click', (e) => {
         if (document.querySelector('.tooltip') === null) {
             addTooltip(e);
             e.preventDefault();
             return;
-        } else if (document.querySelector('.tooltip') != null) {
+        } else if (document.querySelector('.tooltip') !== null) {
             if (e.nextSibling != document.querySelector('.tooltip')) {
                 document.querySelector('.tooltip').remove();
-                addTooltip(e);
                 e.preventDefault();
             } else if (
                 Array.from(e.nextSibling.classList).includes(
@@ -24,18 +25,8 @@ tooltip.forEach((elem) => {
     });
 });
 
-window.addEventListener('scroll', () => {
-    if (document.querySelector('.tooltip_active') != null) {
-        coordinatTooltip(document.querySelector('.tooltip_active'));
-    }
-});
 
-window.addEventListener('resize', () => {
-    if (document.querySelector('.tooltip_active') != null) {
-        coordinatTooltip(document.querySelector('.tooltip_active'));
-    }
-});
-
+// Показать подсказку
 function addTooltip(element) {
     let textElement = document.createElement('div');
 
@@ -50,6 +41,7 @@ function addTooltip(element) {
     coordinatTooltip(document.querySelector('.tooltip_active'));
 }
 
+// Позиция
 function coordinatTooltip(toolTipElement) {
     let hasTooltip = toolTipElement.previousElementSibling;
     let windowWidt = document.documentElement.clientWidth;
@@ -96,3 +88,16 @@ function coordinatTooltip(toolTipElement) {
         }
     }
 }
+
+
+window.addEventListener('scroll', () => {
+    if (document.querySelector('.tooltip_active') != null) {
+        coordinatTooltip(document.querySelector('.tooltip_active'));
+    }
+});
+
+window.addEventListener('resize', () => {
+    if (document.querySelector('.tooltip_active') != null) {
+        coordinatTooltip(document.querySelector('.tooltip_active'));
+    }
+});
