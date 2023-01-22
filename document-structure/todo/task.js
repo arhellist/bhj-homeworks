@@ -9,16 +9,6 @@ button.addEventListener('click', (e) => {
     e.preventDefault();
 });
 
-/*taskInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-        enterTask(taskInput);
-        memoryTask(taskList);
-    } else {
-        return;
-    }
-    e.preventDefault();
-});*/
-
 taskList.addEventListener('click', (e) => {
     removeTask(e.target);
 });
